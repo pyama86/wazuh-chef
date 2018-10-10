@@ -42,6 +42,10 @@ if agent_auth['password']
   args << ' -P ' + agent_auth['password']
 end
 
+if agent_auth['group']
+  args << ' -G ' + agent_auth['group']
+end
+
 execute "#{dir}/bin/agent-auth #{args}" do
   timeout 30
   ignore_failure node['ossec']['ignore_failure']
