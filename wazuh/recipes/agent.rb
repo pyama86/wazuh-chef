@@ -19,7 +19,9 @@
 include_recipe 'apt::default'
 include_recipe 'wazuh::repository'
 
-package 'wazuh-agent'
+package 'wazuh-agent' do
+  version node['wazuh-agent']['version'] if node['wazuh-agent']['version']
+end
 
 dir = node['ossec']['dir']
 agent_auth = node['ossec']['agent_auth']
