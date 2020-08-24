@@ -332,3 +332,5 @@ default['ossec']['conf']['all']['localfile'] = [
 #         }
 #       }
 #]
+
+default['wazuh-agent']['version'] = nil
